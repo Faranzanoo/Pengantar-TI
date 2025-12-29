@@ -1,0 +1,389 @@
+/* Start Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .topbar {
+    width: 96%;
+    padding: 12px 15px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .theme-toggle {
+    font-size: 28px;
+  }
+
+  .sidebar {
+    width: 200px;
+    margin-left: 10px;
+  }
+
+  .content {
+    margin-right: 10px;
+    padding: 20px;
+  }
+
+  #materi h2 {
+    font-size: 26px;
+  }
+
+  #materi h3 {
+    font-size: 17px;
+  }
+
+  #materi h4 {
+    font-size: 15px;
+  }
+
+  #materi p {
+    font-size: 15px;
+  }
+
+  footer {
+    font-size: 13px;
+  }
+}
+/* End Tablet */
+
+
+/* Start Mobile Landscape & Small Tablet (481px - 768px) */
+@media (max-width: 768px) {
+  .topbar {
+    width: 95%;
+    padding: 10px 12px;
+    margin: 10px auto;
+  }
+
+  .title {
+    font-size: 18px;
+    letter-spacing: 0.3px;
+  }
+
+  .logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .theme-toggle {
+    font-size: 26px;
+  }
+
+  .container {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .sidebar {
+    width: 95%;
+    margin: 8px auto;
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .sidebar.collapsed {
+    width: 95%;
+    height: 50px;
+    overflow: hidden;
+  }
+
+  .sidebar-header {
+    margin-bottom: 8px;
+  }
+
+  .sidebar.collapsed .sidebar-header {
+    margin-bottom: 0;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .sidebar li {
+    flex: 0 0 calc(50% - 4px);
+    padding: 8px;
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  .sidebar.collapsed ul {
+    display: none;
+  }
+
+  .sidebar.collapsed li span:nth-child(2) {
+    display: inline;
+  }
+
+  .content {
+    width: 95%;
+    margin: 8px auto;
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  #materi h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  #materi h3 {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  #materi h4 {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+
+  #materi p {
+    font-size: 14px;
+    line-height: 1.7;
+    text-indent: 20px;
+  }
+
+  #materi ul,
+  #materi ol {
+    margin-left: 20px;
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
+/* End Mobile Landscape & Small Tablet */
+
+
+/* Start Mobile Portrait (320px - 480px) */
+@media (max-width: 480px) {
+  .topbar {
+    width: 94%;
+    padding: 8px 10px;
+    margin: 8px auto;
+    border-radius: 12px;
+  }
+
+  .title {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .theme-toggle {
+    font-size: 24px;
+  }
+
+  .sidebar {
+    width: 94%;
+    margin: 6px auto;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .sidebar.collapsed {
+    height: 45px;
+  }
+
+  .sidebar-header h3 {
+    font-size: 15px;
+  }
+
+  .burger {
+    font-size: 20px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .sidebar ul {
+    gap: 6px;
+  }
+
+  .sidebar li {
+    flex: 0 0 100%;
+    padding: 10px 8px;
+    font-size: 13px;
+    border-radius: 6px;
+  }
+
+  .sidebar li span:first-child {
+    font-size: 16px;
+  }
+
+  .content {
+    width: 94%;
+    margin: 6px auto;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  #materi h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  #materi h3 {
+    font-size: 15px;
+    margin-top: 18px;
+    margin-bottom: 10px;
+  }
+
+  #materi h3::before {
+    margin-right: 6px;
+  }
+
+  #materi h4 {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+
+  #materi p {
+    font-size: 13px;
+    line-height: 1.65;
+    text-indent: 15px;
+    margin-bottom: 12px;
+  }
+
+  #materi ul,
+  #materi ol {
+    margin-left: 18px;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  #materi li {
+    margin-bottom: 6px;
+  }
+
+  footer {
+    font-size: 11px;
+  }
+}
+/* End Mobile Portrait */
+
+
+/* Start Extra Small Mobile (max 320px) */
+@media (max-width: 320px) {
+  .topbar {
+    padding: 6px 8px;
+    border-radius: 10px;
+  }
+
+  .title {
+    font-size: 12px;
+  }
+
+  .logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .theme-toggle {
+    font-size: 22px;
+  }
+
+  .sidebar {
+    padding: 8px;
+  }
+
+  .sidebar-header h3 {
+    font-size: 14px;
+  }
+
+  .sidebar li {
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+
+  .content {
+    padding: 12px;
+  }
+
+  #materi h2 {
+    font-size: 18px;
+  }
+
+  #materi h3 {
+    font-size: 14px;
+  }
+
+  #materi h4 {
+    font-size: 13px;
+  }
+
+  #materi p {
+    font-size: 12px;
+    text-indent: 12px;
+  }
+
+  #materi ul,
+  #materi ol {
+    font-size: 12px;
+    margin-left: 15px;
+  }
+
+  footer {
+    font-size: 10px;
+  }
+}
+/* End Extra Small Mobile */
+
+
+/* Start Landscape Orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .topbar {
+    margin: 8px auto;
+    padding: 8px 15px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .container {
+    min-height: auto;
+  }
+
+  .sidebar {
+    padding: 10px;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  #materi h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  #materi h3 {
+    margin-top: 15px;
+    font-size: 15px;
+  }
+
+  #materi p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  footer {
+    font-size: 11px;
+  }
+}
+/* End Landscape Orientation */
