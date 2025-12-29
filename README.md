@@ -33,9 +33,7 @@ Platform pembelajaran berbasis web yang dirancang untuk mendukung perkuliahan Pe
 
 ## Demo
 
-Live preview: [https://username.github.io/repo-name](https://username.github.io/repo-name)
-
-*Catatan: Ganti dengan URL GitHub Pages aktual*
+Live preview: https://faranzanoo.github.io/Pengantar-TI/
 
 ## Struktur Proyek
 
@@ -210,7 +208,7 @@ Extra Small:       < 320px
 
 **Titan Faranzano**
 
-- GitHub: [@your-username](https://github.com/your-username)
+- GitHub: [@Faranzanoo](https://github.com/Faranzanoo)
 
 ## License and Copyright
 
@@ -258,5 +256,6 @@ Terima kasih kepada:
 ---
 
 **Made with dedication by Titan Faranzano**
+
 
 *If this project helps you, please consider giving it a star ⭐*
