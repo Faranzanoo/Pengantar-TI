@@ -1,261 +1,141 @@
-# Pengantar Teknologi Informasi
+# 📘 Pengantar Teknologi Informasi
 
-Website pembelajaran interaktif untuk mata kuliah Pengantar Teknologi Informasi dengan fitur modern dan responsive design.
+Website pembelajaran interaktif untuk mata kuliah **Pengantar Teknologi Informasi**: 14 pertemuan materi yang dimuat dinamis dari file JSON, dengan mode gelap/terang dan tampilan responsif. Dibangun dengan HTML, CSS, dan JavaScript murni tanpa framework.
 
-## Deskripsi
+**Demo:** https://faranzanoo.github.io/Pengantar-TI/
 
-Platform pembelajaran berbasis web yang dirancang untuk mendukung perkuliahan Pengantar Teknologi Informasi. Website ini menyediakan navigasi intuitif, konten dinamis, dan pengalaman pengguna yang optimal di berbagai perangkat.
+---
 
-## Fitur Utama
+## ✨ Fitur
 
-**User Interface**
-- Modern dan minimalist design dengan clean layout
-- Dark/Light mode toggle dengan preferensi tersimpan
-- Smooth animations dan interactive hover effects
-- Collapsible sidebar untuk navigasi yang efisien
+- **Materi dinamis** — isi 15 halaman (General + Pertemuan 1–14) dimuat dari `data/materi.json`, berpindah tanpa memuat ulang halaman
+- **Mode gelap / terang** — pilihan tema tersimpan di `localStorage` dan dipulihkan saat halaman dibuka lagi
+- **Sidebar yang bisa dilipat** untuk memberi ruang baca lebih luas
+- **Tampilan responsif** — breakpoint untuk desktop, tablet, dan ponsel (`css/responsive.css`)
+- **Bisa dioperasikan dengan keyboard** — daftar pertemuan dapat dipilih dengan `Tab` + `Enter`/`Spasi`, dengan indikator fokus yang jelas
+- **Penanda aksesibilitas dasar** — label untuk tombol ikon, `aria-current` pada pertemuan aktif, dan `aria-expanded` pada tombol menu
+- **Tahan terhadap kegagalan** — pesan error yang jelas jika materi gagal dimuat, dan tema tetap berfungsi walau `localStorage` tidak tersedia
 
-**Responsiveness**
-- Fully responsive untuk desktop, tablet, dan mobile devices
-- Adaptive layout untuk berbagai ukuran layar
-- Optimized breakpoints untuk pengalaman pengguna terbaik
+---
 
-**Functionality**
-- Dynamic content loading menggunakan JSON data
-- Theme preference persistence dengan localStorage
-- Smooth navigation tanpa page reload
-- Active state indication untuk menu navigasi
-
-**Security**
-- Content protection system untuk mencegah plagiarisme
-- Copy-paste restriction pada konten
-- Watermark system untuk screenshot protection
-- View source restriction
-
-## Demo
-
-Live preview: https://faranzanoo.github.io/Pengantar-TI/
-
-## Struktur Proyek
+## 📁 Struktur Proyek
 
 ```
-project/
-│
-├── index.html              # Main HTML file
+.
+├── index.html            # Halaman utama
 ├── css/
-│   ├── style.css          # Core styling
-│   └── responsive.css     # Media queries
+│   ├── style.css         # Gaya utama (tema terang/gelap, layout, sidebar)
+│   └── responsive.css    # Media query untuk berbagai ukuran layar
 ├── js/
-│   └── script.js          # JavaScript functionality
+│   └── script.js         # Memuat materi, navigasi, sidebar, dan tema
 ├── data/
-│   └── materi.json        # Content data
+│   └── materi.json       # Isi materi (judul + konten HTML per pertemuan)
 ├── img/
-│   └── logo.png           # Institution logo
-└── README.md              # Project documentation
+│   └── logo.png          # Logo
+└── README.md
 ```
 
-## Teknologi
+---
 
-- **HTML5** - Semantic markup structure
-- **CSS3** - Modern styling with Flexbox
-- **JavaScript (ES6)** - Vanilla JS, no dependencies
-- **JSON** - Data management
-- **LocalStorage API** - Client-side data persistence
+## 🛠️ Teknologi
 
-## Instalasi dan Penggunaan
+| Bagian | Yang dipakai |
+|---|---|
+| Struktur | HTML5 semantik |
+| Tampilan | CSS3 (Flexbox, media query) |
+| Logika | JavaScript ES6 (tanpa dependensi) |
+| Data | JSON |
+| Penyimpanan | `localStorage` (hanya untuk preferensi tema) |
 
-### Instalasi Lokal
+---
+
+## 🚀 Menjalankan Secara Lokal
+
+Materi dimuat dengan `fetch()`, jadi halaman harus dibuka lewat **web server lokal**. Membuka `index.html` langsung dari file (`file://`) akan membuat materi gagal dimuat karena dibatasi browser.
 
 ```bash
-# Clone repository
-git clone https://github.com/username/repo-name.git
-
-# Navigate to directory
-cd repo-name
-
-# Open in browser
-open index.html
+git clone https://github.com/Faranzanoo/Pengantar-TI.git
+cd Pengantar-TI
 ```
 
-Atau gunakan Live Server di VS Code untuk development.
+Lalu jalankan salah satu:
 
-### Konfigurasi Konten
+```bash
+npx serve .                    # Node.js
+python -m http.server 8000     # Python  ->  http://localhost:8000
+```
 
-Edit file `data/materi.json` untuk mengubah konten pembelajaran:
+Atau pakai ekstensi **Live Server** di VS Code.
+
+---
+
+## 🧩 Mengelola Konten
+
+Isi materi ada di `data/materi.json`, berupa array berisi objek `title` dan `content` (HTML):
 
 ```json
 [
   {
-    "title": "Judul Materi",
-    "content": "<h3>Sub Judul</h3><p>Konten dalam format HTML</p>"
+    "title": "Pertemuan 1: Judul Materi",
+    "content": "<h3>Sub Judul</h3><p>Isi materi...</p>"
   }
 ]
 ```
 
-### Kustomisasi Logo
+Untuk menambah pertemuan baru:
 
-Replace file `img/logo.png` dengan logo institusi (recommended size: 48x48px untuk optimal display).
+1. Tambahkan objek baru di akhir `data/materi.json`.
+2. Tambahkan item di sidebar pada `index.html`. Nilai `data-index` harus sama dengan urutan objek di JSON (dimulai dari 0):
 
-## Sistem Keamanan
-
-Website dilengkapi dengan content protection system yang disesuaikan untuk keperluan akademik.
-
-### Akses untuk Evaluator
-
-Dosen dan evaluator memiliki akses penuh untuk:
-- Inspect Element (Right Click → Inspect)
-- Developer Tools (F12, Ctrl+Shift+I)
-- Responsive Design Mode
-- Console logging
-
-### Proteksi Konten
-
-Sistem proteksi aktif untuk:
-- Copy text (Ctrl+C)
-- Cut text (Ctrl+X)
-- Select all (Ctrl+A)
-- View page source (Ctrl+U)
-- Text drag selection
-- Screenshot watermarking
-
-### Developer Mode
-
-Untuk keperluan development, ketik `dev` untuk toggle developer mode yang akan menonaktifkan sementara sistem proteksi.
-
-## Kustomisasi
-
-### Skema Warna
-
-Edit `css/style.css` untuk mengubah color scheme:
-
-```css
-/* Light Mode Colors */
-body {
-  background: #e2e8f0;
-  color: #1e293b;
-}
-
-/* Dark Mode Colors */
-body.dark {
-  background: #0f172a;
-  color: #f1f5f9;
-}
-```
-
-### Menambah Konten Menu
-
-1. Tambahkan menu item di `index.html`:
 ```html
-<li onclick="loadMateri(15)">
-  <span>📖</span>
-  <span>Pertemuan 15</span>
-</li>
+<li data-index="15" tabindex="0"><span aria-hidden="true">📖</span><span>Pertemuan 15</span></li>
 ```
 
-2. Tambahkan data corresponding di `data/materi.json`
+> `materi.json` dimasukkan ke halaman sebagai HTML, jadi hanya gunakan konten yang kamu tulis sendiri atau yang dipercaya.
 
-### Responsive Breakpoints
+### Mengubah warna tema
+
+Edit `css/style.css`:
 
 ```css
-Desktop:           > 1024px
-Tablet:            768px - 1024px
-Mobile Landscape:  481px - 768px
-Mobile Portrait:   320px - 480px
-Extra Small:       < 320px
+body      { background: #e2e8f0; color: #1e293b; }   /* terang */
+body.dark { background: #0f172a; color: #f1f5f9; }   /* gelap  */
 ```
 
-## Deployment
+### Breakpoint responsif
 
-### GitHub Pages
-
-1. Push code ke GitHub repository
-2. Navigate ke Settings → Pages
-3. Pilih source: Deploy from a branch
-4. Select branch: main, folder: / (root)
-5. Save dan tunggu deployment selesai
-6. Website akan tersedia di `https://username.github.io/repo-name`
-
-## Browser Compatibility
-
-| Browser          | Minimum Version |
-|------------------|-----------------|
-| Google Chrome    | 90+             |
-| Mozilla Firefox  | 88+             |
-| Safari           | 14+             |
-| Microsoft Edge   | 90+             |
-| Opera            | 76+             |
-
-## Known Limitations
-
-- Screenshot protection menggunakan watermark, tidak dapat mencegah 100% screenshot
-- Text selection disabled dapat memengaruhi accessibility
-- LocalStorage bergantung pada browser permission
-- Developer mode bypass tersedia untuk development purposes
-
-## Changelog
-
-### Version 1.0.0
-
-**Initial Release**
-- Implemented core functionality
-- Added dark/light theme toggle
-- Created responsive design for all devices
-- Integrated content protection system
-- Added dynamic content loading
-- Implemented watermark system
-- Added developer mode for development
-
-## Author
-
-**Titan Faranzano**
-
-- GitHub: [@Faranzanoo](https://github.com/Faranzanoo)
-
-## License and Copyright
-
-### © 2025 Titan Faranzano. All Rights Reserved.
-
-**HAK CIPTA DILINDUNGI UNDANG-UNDANG**
-
-Proyek ini dilindungi oleh hak cipta Indonesia. Penggunaan, reproduksi, modifikasi, atau distribusi tanpa izin tertulis dari pemilik hak cipta adalah ilegal dan dapat dituntut secara hukum.
-
-### Pembatasan Penggunaan
-
-**DILARANG:**
-- Menyalin atau menduplikasi source code untuk proyek lain
-- Mendistribusikan atau mempublikasikan ulang dengan atau tanpa modifikasi
-- Menggunakan sebagai template untuk proyek komersial
-- Mengklaim kepemilikan atau authorship
-- Menghapus atau mengubah atribusi copyright
-
-**DIIZINKAN:**
-- Melihat source code untuk tujuan pembelajaran pribadi
-- Fork repository untuk referensi pribadi non-publik
-- Memberikan star pada repository
-
-### Lisensi Komersial
-
-Untuk penggunaan komersial, modifikasi signifikan, atau redistribusi, silakan hubungi pemilik untuk mendapatkan lisensi tertulis.
-
-### Dasar Hukum
-
-Perlindungan hak cipta ini berdasarkan:
-- Undang-Undang Republik Indonesia Nomor 28 Tahun 2014 tentang Hak Cipta
-- Pasal 113 ayat (3): Pelanggaran hak cipta dapat dikenai pidana penjara maksimal 4 tahun dan/atau denda maksimal Rp 1.000.000.000,00 (satu miliar rupiah)
-
-### Disclaimer
-
-Website ini dibuat untuk keperluan akademik. Konten yang tersedia ditujukan untuk tujuan pembelajaran dan edukasi. Pemilik tidak bertanggung jawab atas penggunaan informasi di luar konteks pendidikan.
-
-## Acknowledgments
-
-Terima kasih kepada:
-- Dosen pembimbing mata kuliah Pemrograman WEB I
-- Universitas Pamulang
-- Komunitas open-source untuk inspirasi dan best practices
+| Lebar layar | Penyesuaian |
+|---|---|
+| ≤ 1024px | Tablet |
+| ≤ 768px | Ponsel landscape |
+| ≤ 480px | Ponsel portrait |
+| ≤ 320px | Layar sangat kecil |
 
 ---
 
-**Made with dedication by Titan Faranzano**
+## 🌐 Deploy ke GitHub Pages
 
+1. Push kode ke repository GitHub.
+2. Buka **Settings → Pages**.
+3. Pada *Build and deployment*, pilih **Deploy from a branch**, branch `main`, folder `/ (root)`.
+4. Simpan dan tunggu proses selesai. Situs tersedia di `https://faranzanoo.github.io/Pengantar-TI/`.
 
-*If this project helps you, please consider giving it a star ⭐*
+---
+
+## ⚠️ Keterbatasan
+
+- Konten bersifat statis; belum ada pencarian, penanda progres, atau kuis.
+- Daftar pertemuan di sidebar ditulis manual di `index.html` dan harus disamakan dengan isi `materi.json`.
+- Belum ada pengujian otomatis.
+
+---
+
+## 📝 Catatan
+
+Website ini dibuat sebagai tugas **UAS mata kuliah Pemrograman Web I** di **Universitas Pamulang**, dengan materi Pengantar Teknologi Informasi sebagai isinya. Konten ditujukan untuk keperluan belajar. Logo universitas dipakai untuk keperluan akademik tersebut dan hak atasnya tetap milik Universitas Pamulang.
+
+Terima kasih kepada dosen mata kuliah Pemrograman Web I atas bimbingannya.
+
+---
+
+© 2025 Titan Faranzano. Source code ditampilkan untuk dilihat dan dipelajari; penggunaan ulang tidak diizinkan tanpa izin tertulis.

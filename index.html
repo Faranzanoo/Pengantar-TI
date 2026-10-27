@@ -2,6 +2,8 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Website pembelajaran Pengantar Teknologi Informasi: materi 14 pertemuan dengan mode gelap/terang dan tampilan responsif.">
   <title>Pengantar Teknologi Informasi</title>
   <link rel="icon" type="image/png" href="img/logo.png">
   <link rel="stylesheet" href="css/style.css">
@@ -18,7 +20,7 @@
 
     <span class="title">Pengantar Teknologi Informasi</span>
 
-    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Ganti tema terang atau gelap">🌙</button>
   </header>
 <!-- End Topbar -->
 
@@ -27,34 +29,34 @@
   <div class="container">
 
 <!-- Start Sidebar -->
-    <aside class="sidebar" id="sidebar">
+    <aside class="sidebar" id="sidebar" aria-label="Daftar pertemuan">
 
       <div class="sidebar-header">
         <h3 class="sidebar-title">Course Index</h3>
-        <button class="burger" onclick="toggleSidebar()">
+        <button class="burger" id="burger" type="button" aria-label="Buka atau tutup menu" aria-controls="sidebar" aria-expanded="true">
           <span class="burger-icon">✕</span>
         </button>
       </div>
 
       <ul>
-        <li class="active" onclick="loadMateri(0)">
-          <span>📘</span>
+        <li class="active" data-index="0" tabindex="0" aria-current="page">
+          <span aria-hidden="true">📘</span>
           <span>General</span>
         </li>
-        <li onclick="loadMateri(1)"><span>📖</span><span>Pertemuan 1</span></li>
-        <li onclick="loadMateri(2)"><span>📖</span><span>Pertemuan 2</span></li>
-        <li onclick="loadMateri(3)"><span>📖</span><span>Pertemuan 3</span></li>
-        <li onclick="loadMateri(4)"><span>📖</span><span>Pertemuan 4</span></li>
-        <li onclick="loadMateri(5)"><span>📖</span><span>Pertemuan 5</span></li>
-        <li onclick="loadMateri(6)"><span>📖</span><span>Pertemuan 6</span></li>
-        <li onclick="loadMateri(7)"><span>📖</span><span>Pertemuan 7</span></li>
-        <li onclick="loadMateri(8)"><span>📖</span><span>Pertemuan 8</span></li>
-        <li onclick="loadMateri(9)"><span>📖</span><span>Pertemuan 9</span></li>
-        <li onclick="loadMateri(10)"><span>📖</span><span>Pertemuan 10</span></li>
-        <li onclick="loadMateri(11)"><span>📖</span><span>Pertemuan 11</span></li>
-        <li onclick="loadMateri(12)"><span>📖</span><span>Pertemuan 12</span></li>
-        <li onclick="loadMateri(13)"><span>📖</span><span>Pertemuan 13</span></li>
-        <li onclick="loadMateri(14)"><span>📖</span><span>Pertemuan 14</span></li>
+        <li data-index="1" tabindex="0"><span aria-hidden="true">📖</span><span>Pertemuan 1</span></li>
+        <li data-index="2" tabindex="0"><span aria-hidden="true">📖</span><span>Pertemuan 2</span></li>
+        <li data-index="3" tabindex="0"><span aria-hidden="true">📖</span><span>Pertemuan 3</span></li>
+        <li data-index="4" tabindex="0"><span aria-hidden="true">📖</span><span>Pertemuan 4</span></li>
+        <li data-index="5" tabindex="0"><span aria-hidden="true">📖</span><span>Pertemuan 5</span></li>
+        <li data-index="6" tabindex="0"><span aria-hidden="true">📖</span><span>Pertemuan 6</span></li>
+        <li data-index="7" tabindex="0"><span aria-hidden="true">📖</span><span>Pertemuan 7</span></li>
+        <li data-index="8" tabindex="0"><span aria-hidden="true">📖</span><span>Pertemuan 8</span></li>
+        <li data-index="9" tabindex="0"><span aria-hidden="true">📖</span><span>Pertemuan 9</span></li>
+        <li data-index="10" tabindex="0"><span aria-hidden="true">📖</span><span>Pertemuan 10</span></li>
+        <li data-index="11" tabindex="0"><span aria-hidden="true">📖</span><span>Pertemuan 11</span></li>
+        <li data-index="12" tabindex="0"><span aria-hidden="true">📖</span><span>Pertemuan 12</span></li>
+        <li data-index="13" tabindex="0"><span aria-hidden="true">📖</span><span>Pertemuan 13</span></li>
+        <li data-index="14" tabindex="0"><span aria-hidden="true">📖</span><span>Pertemuan 14</span></li>
       </ul>
 
     </aside>

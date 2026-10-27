@@ -334,3 +334,13 @@ footer {
   opacity: 0.7;
 }
 /* End Footer */
+
+
+/* Start Focus Visible (navigasi keyboard) */
+.sidebar li:focus-visible,
+.theme-toggle:focus-visible,
+.burger:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 2px;
+}
+/* End Focus Visible */
